@@ -32,9 +32,13 @@ export default {
             this.list = [];
         },
         handleDeleteParent(node) {
-            alert("删除节点"+node.index+":"+node.content);
+           // alert("删除节点"+node.index+":"+node.content);
             this.list.splice(node.index,1);
         }
     }
 }
 </script>
+
+<style scoped>
+
+</style>

@@ -21,5 +21,6 @@ export default {
 <style scoped>
 .item{
     color: green;
+    background-color: bisque;
 }
 </style>
