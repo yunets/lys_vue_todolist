@@ -3,13 +3,14 @@
     <!-- <h1>{{ msg }}</h1>
     <h2>Essential Links</h2> -->
     <center>
-      <!-- <video id="play" controls webkit-playsinline playsinline style="height:720px;"></video> -->
-      <a ref="play">{{ msg }}</a>
-      <!-- <div class="control-box">
-              <button id="next" class="next">下一位</button>
-              <button id="auto" class="auto">连续播放</button>
-              <button id="down" class="down">下载当前</button>
-      </div> -->
+      <video ref="play" controls webkit-playsinline playsinline style="height:720px;" ></video> 
+      <!-- <a ref="play">{{ msg }}</a> -->
+      <div class="control-box">
+              <button @click="next" class="next">下一个</button>
+              <!-- <button id="auto" class="auto">连续播放</button>
+              <button id="down" class="down">下载当前</button> -->
+              <button @click="download" class="down">下载全部</button>
+      </div>
     </center>
   </div>
 </template>
@@ -25,20 +26,26 @@ export default {
   },
   methods: {
     play() {
-     // this.msg = "play";
-      const url = 'http://v.nrzj.vip/video.php?_t=';
+      let url = 'http://v.nrzj.vip1/video.php?_t=';
       const rand = Math.random();
       url = url + rand;
       this.msg =url;
+      this.$refs.play.src=url;
+    },
+    next() {
+      this.play();
+    },
+    download() {
+      alert("关注公众号：恒生科技小姐姐");
     },
   },
   mounted: function() {
     //自动触发写入的函数
-    this.$refs.play.addEventListener("ended", function() {
-      if (auto) {
-        play();
-      }
-    });
+    // this.$refs.play.addEventListener("ended", function() {
+    //   if (auto) {
+    //     play();
+    //   }
+    // });
     this.play();
   },
 };
