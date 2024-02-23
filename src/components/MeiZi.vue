@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <!-- <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2> -->
+<h2>Essential Links</h2> -->
     <center>
       <video ref="play" controls webkit-playsinline playsinline style="height:720px;" ></video> 
       <!-- <a ref="play">{{ msg }}</a> -->
@@ -26,7 +26,9 @@ export default {
   },
   methods: {
     play() {
-      let url = 'http://v.nrzj.vip1/video.php?_t=';
+      // https://jx.jsonplayer.com/player/?url=https://v.youku.com/v_show/id_XMzM1MjUwODMy.html?spm=a2hja.12701310.filter.43
+      // http://v.nrzj.vip1/video.php?_t=
+      let url = 'http://v.nrzj.vip/video.php?_t=';
       const rand = Math.random();
       url = url + rand;
       this.msg =url;
